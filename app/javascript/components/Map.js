@@ -7,10 +7,8 @@ import Marker from 'components/Marker'
 class Map extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { markers: {}}
+    this.state = { markers: {} }
   };
-
-
   static defaultProps = {
     center: {
       // lat: 52.54,
@@ -40,15 +38,23 @@ class Map extends React.Component {
   }  
 
   render () {
+    if(this.state.markers.length > 0){
+      var allTheMarkers = this.state.markers.map(
+        function(mkr) { 
+          return {foo: mkr[0]}
+          // return <Marker>             // does not work
+         }
+      );
+    }
+
     return (
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyD3nqUGFkDrCCDA8os-XGLGCMRxRCYW0tU' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
-          yesIWantToUseGoogleMapApiInternals
-        >
-          <Marker lat = {50.06605} lng = {-5.71292}/> 
+          yesIWantToUseGoogleMapApiInternals>
+            <Marker lat = {52.54} lng={-5.77}   />
         </GoogleMapReact>
       </div>
     );
