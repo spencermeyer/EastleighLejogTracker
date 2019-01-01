@@ -5,6 +5,12 @@ import $ from 'jquery'
 import Marker from 'components/Marker'
 
 class Map extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { markers: {}}
+  };
+
+
   static defaultProps = {
     center: {
       // lat: 52.54,
@@ -17,14 +23,18 @@ class Map extends React.Component {
 
   componentDidMount() {
     console.log('hello from CDM');
+    var that = this;
     $.ajax({
       url: '/end_to_end_example_main_route.gpx',
       dataType: 'xml',
       success: function(data){
         console.log('we got' + data.getElementsByTagName('trkpt').length + 'points');
-        console.log('first lat is ' + data.getElementsByTagName('trkpt')[1].getAttribute('lat'));
-        console.log('first lng is ' + data.getElementsByTagName('trkpt')[1].getAttribute('lon'));
-        // debugger;
+        var dataSet = data.getElementsByTagName('trkpt');
+        var result = Object.keys(dataSet).map(function(key){ return [ dataSet[key].getAttribute('lat'), dataSet[key].getAttribute('lon') ]  });
+
+        that.setState({
+          markers: result
+        });
       }
     });
   }  
@@ -46,7 +56,3 @@ class Map extends React.Component {
 }
 
 export default Map
-
-
-
-
