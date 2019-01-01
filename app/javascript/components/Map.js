@@ -37,24 +37,28 @@ class Map extends React.Component {
     });
   }  
 
-  render () {
-    if(this.state.markers.length > 0){
-      var allTheMarkers = this.state.markers.map(
-        function(mkr) { 
-          return {foo: mkr[0]}
-          // return <Marker>             // does not work
-         }
-      );
+  renderMarkers() {
+    if(this.state.markers.length > 1) { 
+      return this.state.markers.map((mkr, i) => {
+        return <Marker lat = { mkr[0] } lng = { mkr[1] } />
+      })
     }
+  }
 
+  render () {
+    var allTheMarkers = 'foo'
+
+    debugger;
     return (
       <div style={{ height: '100vh', width: '100%' }}>
+        { console.log('from within return') }
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyD3nqUGFkDrCCDA8os-XGLGCMRxRCYW0tU' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           yesIWantToUseGoogleMapApiInternals>
             <Marker lat = {52.54} lng={-5.77}   />
+            { this.renderMarkers() }
         </GoogleMapReact>
       </div>
     );
