@@ -11,12 +11,10 @@ class Map extends React.Component {
   };
   static defaultProps = {
     center: {
-      // lat: 52.54,
-      lat: 51.54,
-      lng: -5.77
-      // lng: -1.77
+      lat: 54,
+      lng: -1.77
     },
-    zoom: 7
+    zoom: 6
   };
 
   componentDidMount() {
