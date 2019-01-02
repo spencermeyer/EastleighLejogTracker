@@ -23,7 +23,7 @@ class Map extends React.Component {
     console.log('hello from CDM');
     var that = this;
     $.ajax({
-      url: '/end_to_end_example_main_route.gpx',
+      url: '/end_to_end_example_main_route_965nodes.gpx',
       dataType: 'xml',
       success: function(data){
         console.log('we got' + data.getElementsByTagName('trkpt').length + 'points');
@@ -46,9 +46,6 @@ class Map extends React.Component {
   }
 
   render () {
-    var allTheMarkers = 'foo'
-
-    debugger;
     return (
       <div style={{ height: '100vh', width: '100%' }}>
         { console.log('from within return') }
