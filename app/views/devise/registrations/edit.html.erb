@@ -13,6 +13,21 @@
   <% end %>
 
   <div class="field">
+    <%= f.label 'First Name' %> <br />
+    <%= f.text_field :first_name, autocomplete: "off", value: current_user.first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Last Name' %><br />
+    <%= f.text_field :last_name, autocomplete: "off", value: current_user.last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Screen Name' %> <i>(this is what others will see on the leaderboard etc)</i><br />
+    <%= f.text_field :screen_name, autocomplete: "off", value: current_user.screen_name %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
