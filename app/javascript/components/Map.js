@@ -52,7 +52,6 @@ class Map extends React.Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           yesIWantToUseGoogleMapApiInternals>
-            <Marker lat = {52.54} lng={-5.77}   />
             { this.renderMarkers() }
         </GoogleMapReact>
       </div>
