@@ -23,7 +23,17 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Users will need to login :)
 gem 'devise'
+
+# We'll need background workers to process the data
+gem 'resque'
+gem 'resque-web'
+gem 'resque-scheduler-web'
+gem 'resque-scheduler', '~> 4.3.1'
+gem 'resque-delayed', '~> 1.3.0'
+
+gem 'slack-notifier'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
