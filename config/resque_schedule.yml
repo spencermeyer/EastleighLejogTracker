@@ -1,0 +1,15 @@
+AssembleUserImporters:
+  cron: '30 6 * * 7'
+  class: AssembleUserImporters
+  queue: assembly
+  args: 
+    'lejog testing'
+  description: 'Assembles individual jobs'
+  
+# Loggeronly:
+#   cron: '0 9 * * * *'
+#   class: Alerter::Loggeronly
+#   queue: loggeronly
+#   args:
+#     'testing rescue schedule alerter logger once per day'
+#   description: 'Runs the perform method in Alerter::Loggeronly'

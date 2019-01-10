@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190104213741) do
+ActiveRecord::Schema.define(version: 20190107210427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20190104213741) do
     t.text "first_name"
     t.text "last_name"
     t.text "screen_name"
+    t.text "strava_access_token"
+    t.text "strava_refresh_token"
+    t.integer "strava_access_token_expiry_in"
+    t.integer "strava_access_token_expiry_at"
+    t.integer "strava_athlete_auth_id"
+    t.text "strava_athlete_auth_username"
+    t.text "strava_athlete_auth_firstname"
+    t.text "strava_athlete_auth_lastname"
+    t.text "strava_athlete_auth_email"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

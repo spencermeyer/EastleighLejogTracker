@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'map#index'
-  get 'about/about', to: 'about#about'
+  get 'about/about',  to: 'about#about'
+  get 'strava_auth',  to: 'strava_auth#strava_auth'
 end

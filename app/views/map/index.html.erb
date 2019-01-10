@@ -5,7 +5,15 @@
 </head>
 <body>
   <div class='container-fluid'>
-    <h3>Welcome to Eastleigh Running Club's Lejog Tracker !!! </h3> 
+    <h3>Welcome to Eastleigh Running Club's Lejog Tracker !!! </h3>
+
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+
+    <form>
+      <a href=<%= strava_authorize_request_path %> class='btn btn-primary'>Update Mileage</a> 
+    </form>
 
     <div class='row'>
       <div class='col-sm-8'>
