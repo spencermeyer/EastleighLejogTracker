@@ -31,3 +31,13 @@
 
 <%= link_to 'New Run', new_run_path, class: 'btn btn-outline-success'
  %>
+
+<%= link_to 'Get Data From Strava', strava_authorize_request_path, class: "btn btn-outline-success #{(current_user && current_user.strava_id)  ? '':'disabled'  }"
+%>
+<br>
+
+<% if !(current_user && current_user.strava_id)  %>
+ <p><i>Is the update from Strava button disabled?  Please login and also set your strava id under 'edit user' :) </i></p>
+<% end %>
+
+
