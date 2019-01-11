@@ -28,6 +28,7 @@
 #  strava_athlete_auth_firstname :text
 #  strava_athlete_auth_lastname  :text
 #  strava_athlete_auth_email     :text
+#  admin                         :boolean
 #
 
 class User < ApplicationRecord
