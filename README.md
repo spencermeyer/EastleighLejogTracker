@@ -1,9 +1,9 @@
 My Land's End to John O Groats tracker.
 .......................................
 
+This app allows users to track their virtual progress from Land's end to John O Groats on a google map. 
 
-
-
+I'm using Ruby on rails for the app, and the front end employs some React jsx for the map view. 
 
 Ruby 2.4.0
 Rails 5.1.6
@@ -38,8 +38,11 @@ Alter the map helper url from force to auto for deploy.
 
 FINISH THE COLLECT USER DATA JOB, DEPENDS ON THE RUN MODEL.
 
-
-
+MAKE THE TOTALIZER WORK  (selector, sort by, total_miles method.)
+Make the leaderboard work correctly.
+DISTANCE CONVERTER
+remove strava run id from views after testing
+add a disabled button if the stava id is not entered
 
 
 

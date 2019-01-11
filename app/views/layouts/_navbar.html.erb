@@ -14,7 +14,12 @@
         <% end %>
       </li>
       <li>
-        <%= link_to 'About/FAQ/Instructions', about_about_path, class: 'nav-link' %>
+      <% if user_signed_in? %>
+        <%= link_to 'My Runs', runs_path, class: 'nav-link'%>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to 'About/FAQ/Instructions', about_about_path, class: 'nav-link' %>
       </li>
     </ul>
   </div>

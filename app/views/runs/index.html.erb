@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Runs</h1>
+
+<table class='table.table-striped.table-bordered.table-hover'>
+  <thead>
+    <tr>
+      <th class='table-header scope='col'>Distance (m)</th>
+      <th class='table-header scope='col'>Date</th>
+      <th class='table-header scope='col'>User</th>
+      <th class='table-header scope='col'>Show Link</th>
+      <th class='table-header scope='col'>Edit Link</th>
+      <th class='table-header scope='col'>Destroy Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @runs.each do |run| %>
+      <tr>
+        <td><%= run.distance %></td>
+        <td><%= run.date %></td>
+        <td><%= run.user_id %></td>
+        <td><%= link_to 'Show', run %></td>
+        <td><%= link_to 'Edit', edit_run_path(run) %></td>
+        <td><%= link_to 'Destroy', run, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Run', new_run_path, class: 'btn btn-outline-success'
+ %>

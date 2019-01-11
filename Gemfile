@@ -50,6 +50,7 @@ group :development, :test do
   gem 'annotate'
   gem 'pry-rails'
   gem 'pry-byebug'  # changed from pry.
+  gem 'awesome_print'
 end
 
 group :development do

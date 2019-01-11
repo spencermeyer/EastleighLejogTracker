@@ -1,0 +1,12 @@
+<h3>Individual Leaderboard</h3>
+
+<table class='leaderboard-table'>
+  <tr>
+    <th class='leaderboard-column'>Name</th><th class='leaderboard-column'>Miles</th>
+  </tr>
+    <% User.all.each do |user| %>
+  <tr>
+    <td class='leaderboard-column'><%= user.screen_name %></td><td class='leaderboard-column'><%= user.total_miles%></td>
+  </table>
+
+<% end %>

@@ -22,5 +22,11 @@ form {
   margin-left: 20px;
 }
 
+.leaderboard-table {
+  width: 100%;
+}
 
+.leaderboard-column {
+  width: 50%;
+}
 

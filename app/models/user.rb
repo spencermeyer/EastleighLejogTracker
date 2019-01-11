@@ -4,6 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :runs
+
+  def total_miles
+    runs.all.sum(:distance)
+  end
+
   def strava_access_token_expiry_at_human
     DateTime.strptime(strava_access_token_expiry_at.to_s, '%s')
   end

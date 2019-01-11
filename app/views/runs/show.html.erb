@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Strava run:</strong>
+  <%= @run.strava_run_id %>
+</p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @run.distance %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @run.date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @run.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_run_path(@run) %> |
+<%= link_to 'Back', runs_path %>

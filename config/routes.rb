@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :runs
   require 'resque_web'
 
   resque_web_constraint = lambda do |request|
@@ -11,6 +12,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
   root to: 'map#index'
   get 'about/about',  to: 'about#about'
   get 'strava_auth',  to: 'strava_auth#strava_auth'
