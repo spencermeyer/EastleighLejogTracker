@@ -1,9 +1,11 @@
 class CollectUserDataJob
   @queue = :collect
     
-  def self.perform(user)
+  def self.perform(user_hash)
+    user = User.find_by_id(user_hash['id'])
+
     notifier = Slack::Notifier.new(ENV['SLACK_WEBHOOK_URL'], channel: "#general")
-    notifier.ping text: "Starting Collect Data Job for #{user.first_name}"
+    notifier.ping text: "Starting Collect Data Job for #{user['first_name']}"
 
     before = Time.now.to_i
     after  = (DateTime.new(2019, 1, 1)).to_i
@@ -18,19 +20,21 @@ class CollectUserDataJob
     if response.code.to_i == 200
       data = JSON.parse(response.body)
 
-      data.each do |strava_run|
-
+      if user.strava_id == data[0]['athlete']['id']
+        data.each do |strava_run|
+          run = Run.find_or_create_by(strava_run_id: strava_run['id'])
+          run.user_id = user.id
+          run.distance = strava_run['distance']
+          run.date = Time.zone.parse(strava_run['start_date'])
+          run.save
+        end
+      else
+          Rails.logger.log "Mismatch Athlete ID for #{user.id}"
       end
 
-      # check the athlete id and type and then save the data.  We'll save:
-      #  distance
-      #  id
-      #  start date
-      #
-      binding.pry
-
-
+      notifier.ping text: "Sucess Collect Data Job for #{user.first_name}"
     else
+      notifier.ping text: "Failed Collect Data Job for #{user.first_name}"
     end
   end
 end

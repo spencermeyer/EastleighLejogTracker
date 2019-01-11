@@ -33,16 +33,28 @@ STRAVA_CLIENT_SECRET environmental variable.
 
 TODO
 ----
-Make a job to refresh access tokens continually...
+Make a job to refresh access tokens daily...and then refresh data.
+
 Alter the map helper url from force to auto for deploy.
 
-FINISH THE COLLECT USER DATA JOB, DEPENDS ON THE RUN MODEL.
 
 MAKE THE TOTALIZER WORK  (selector, sort by, total_miles method.)
 Make the leaderboard work correctly.
 DISTANCE CONVERTER
 remove strava run id from views after testing
-add a disabled button if the stava id is not entered
+
+
+admin panel for start and finish dates.
+
+add admin to user model.
+
+add a message button to the FAQs.
+
+sort map helper with the callback url config
+
+'bugs' to fix
+-----------
+why when I pass a user into the resque job, does it end up as a hash and I have to look up the user again?
 
 
 
