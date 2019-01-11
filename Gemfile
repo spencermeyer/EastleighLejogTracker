@@ -29,6 +29,7 @@ gem 'resque-scheduler', '~> 4.3.1'
 gem 'resque-delayed', '~> 1.3.0'
 
 gem 'slack-notifier'
+gem 'active_model_serializers'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
