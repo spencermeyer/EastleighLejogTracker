@@ -33,27 +33,42 @@ STRAVA_CLIENT_SECRET environmental variable.
 
 TODO
 ----
-Make a job to refresh access tokens daily...and then refresh data.
-
-Alter the map helper url from force to auto for deploy.
 
 
-MAKE THE TOTALIZER WORK  (selector, sort by, total_miles method.)
-Make the leaderboard work correctly.
+MUST DO BEFORE TESTING
+......................
 DISTANCE CONVERTER
+
 remove strava run id from views after testing
-
-
-admin panel for start and finish dates.
-
-add admin to user model.
-
-add a message button to the FAQs.
 
 sort map helper with the callback url config
 
+MUST DO BEFORE PUT INTO WILD
+............................
+MAKE THE TOTALIZER WORK  (selector, sort by, total_miles method.)
+
+Make the leaderboard work correctly.  (make it a react component?).
+
+Put leaderboard and team tags on the route.
+
+NICE TO HAVE
+............
+Alter the map helper url from force to auto for deploy.
+
+add a message button to the FAQs.
+
+admin panel for start and finish dates.
+
+Make a job to refresh access tokens daily...and then refresh data.
+
+
+before deploy:
+--------------
+admin in routes
+
+
 'bugs' to fix
------------
+-------------
 why when I pass a user into the resque job, does it end up as a hash and I have to look up the user again?
 
 
