@@ -7,7 +7,7 @@ namespace :resque do
     require 'resque'
 
     # you probably already have this somewhere
-    # Resque.redis = 'localhost:6379'  # I do :)
+    Resque.redis = 'localhost:6379' unless Rails.env='production'
   end
 
   task :setup_schedule => :setup do
@@ -34,4 +34,7 @@ namespace :resque do
   end
 
   task :scheduler => :setup_schedule
+
+  Resque.after_fork = Proc.new { ActiveRecord::Base.establish_connection }
+
 end
