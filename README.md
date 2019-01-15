@@ -43,6 +43,8 @@ remove strava run id from views after testing
 
 sort map helper with the callback url config
 
+do teams.
+
 MUST DO BEFORE PUT INTO WILD
 ............................
 MAKE THE TOTALIZER WORK  (selector, sort by, total_miles method.)
@@ -50,6 +52,8 @@ MAKE THE TOTALIZER WORK  (selector, sort by, total_miles method.)
 Make the leaderboard work correctly.  (make it a react component?).
 
 Put leaderboard and team tags on the route.
+
+Admin access only to resque (routes).
 
 NICE TO HAVE
 ............
@@ -70,6 +74,11 @@ admin in routes
 'bugs' to fix
 -------------
 why when I pass a user into the resque job, does it end up as a hash and I have to look up the user again?
+
+Notes for if I move away from Heroku
+------------------------------------
+redis prod config
+callback url
 
 
 
