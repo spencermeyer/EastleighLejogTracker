@@ -21,6 +21,11 @@
     <%= form.number_field :distance, id: :run_distance %>
   </div>
 
+  # TODO UNITS.  *******
+  <div class="field">
+    <%= form.collection_select :units, ['miles', 'kilometers'] %>
+  </div>
+
   <div class="field">
     <%= form.label :date %>
     <%= form.datetime_select :date, id: :run_date %>
