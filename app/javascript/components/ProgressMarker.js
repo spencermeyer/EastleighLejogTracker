@@ -4,7 +4,7 @@ class ProgressMarker extends React.Component {
   render () {
     return (
       <div className='progressmarker'>
-        O
+        {this.props.text}
       </div>
     );
   }
