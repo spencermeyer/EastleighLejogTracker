@@ -33,6 +33,21 @@ class Map extends React.Component {
         });
       }
     });
+
+    $.ajax({
+      url: '/leader_data', 
+      dataType: 'json',
+      success: function(data){
+        console.log('leader data', data);
+
+
+
+  // have to match distances with progres
+  // there are 965 points of markers about one per mile.
+  // select the one that is nearest the mile in the total for lat and long.
+      }
+    })
+
   }
 
   renderMarkers() {
@@ -43,27 +58,6 @@ class Map extends React.Component {
     }
   }
 
-  renderProgressMarkers() {
-    console.log('Loading Progress Data');
-    var that = this;
-    $.ajax({
-      url: '/leader_data',
-      dataType: 'json',
-      success: function(data){
-        console.log('we got' + data);
-
-        // here we have a json object of marker names and distances.
-        // have to match distances with progres
-        // there are 965 points of markers about one per mile.
-        // select the one that is nearest the mile in the total for lat and long.
-
-        // that.setState({
-        //   progress_markers:
-        // });
-      }
-    });
-
-  }
 
   render () {
     return (

@@ -1,15 +1,14 @@
 <div class='bg-warning'>
   <h3>Individual Leaderboard</h3>
-  <h4>Not in order yet  :( </h4>
 
   <table class='leaderboard-table'>
     <tr>
       <th class='leaderboard-column'>Name</th>
       <th class='leaderboard-column'>Miles</th>
     </tr>
-    <% User.all.each do |user| %>
+    <% @leader_data.each do |user| %>
       <tr>
-        <td class='leaderboard-column'><%= user.screen_name %></td><td class='leaderboard-column'><%= user.total_miles%></td>
+        <td class='leaderboard-column'><%= user[:screen_name] %></td><td class='leaderboard-column'><%= user[:total_miles]%></td>
       </tr>
     <% end %>
     </table>
