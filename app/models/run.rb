@@ -14,5 +14,5 @@
 class Run < ApplicationRecord
   belongs_to :user
 
-  validates :strava_run_id, uniqueness: true
+  validates :strava_run_id, uniqueness: true, allow_blank: true, allow_nil: true
 end

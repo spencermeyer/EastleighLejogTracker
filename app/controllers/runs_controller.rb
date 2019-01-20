@@ -24,7 +24,9 @@ class RunsController < ApplicationController
   # POST /runs
   # POST /runs.json
   def create
-    @run = Run.new(run_params)
+    old_run_params = run_params
+    new_run_params = old_run_params.merge({user_id: current_user.id})
+    @run = Run.new(new_run_params)
 
     respond_to do |format|
       if @run.save
@@ -70,7 +72,12 @@ class RunsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def run_params
-      params.require(:run).permit(:strava_run_id, :distance, :date, :user_id)
-      # TODO UNITS ******************  can I convert them all here ?  Need to be converted to metres. - or what's best?
+      #The distance units in the db will always be metres.
+      if params[:run][:units] == 'miles'
+        params[:run][:distance] = (params[:run][:distance].to_i * 1609).to_s
+      elsif params[:run][:units] = 'kilometres'
+        params[:run][:distance] = (params[:run][:distance].to_i * 1000).to_s
+      end
+      params.require(:run).permit(:distance, :date)
     end
 end

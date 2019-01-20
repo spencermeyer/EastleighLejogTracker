@@ -37,7 +37,6 @@ TODO
 
 MUST DO BEFORE TESTING
 ......................
-DISTANCE CONVERTER
 
 remove strava run id from views after testing
 
@@ -47,11 +46,11 @@ do teams.
 
 MUST DO BEFORE PUT INTO WILD
 ............................
-MAKE THE TOTALIZER WORK  (selector, sort by, total_miles method.)
 
-Make the leaderboard work correctly.  (make it a react component?).
+Get the runs/show to be selective units.
+Have a preferred units for a user.
 
-Put leaderboard and team tags on the route.
+
 
 Admin access only to resque (routes).
 

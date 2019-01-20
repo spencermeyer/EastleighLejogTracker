@@ -12,28 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :strava_run_id %>
-    <%= form.number_field :strava_run_id, id: :run_strava_run_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :distance %>
     <%= form.number_field :distance, id: :run_distance %>
   </div>
 
-  # TODO UNITS.  *******
   <div class="field">
-    <%= form.collection_select :units, ['miles', 'kilometers'] %>
+    <%= form.select :units, ['miles', 'kilometers'] %>
   </div>
 
   <div class="field">
     <%= form.label :date %>
     <%= form.datetime_select :date, id: :run_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :run_user_id %>
   </div>
 
   <div class="actions">

@@ -6,6 +6,8 @@
   <thead>
     <tr>
       <th class='table-header scope='col'>Distance (m)</th>
+      <th class='table-header scope='col'>Distance (miles)</th>
+      <th class='table-header scope='col'>Distance (km)</th>
       <th class='table-header scope='col'>Date</th>
       <th class='table-header scope='col'>User</th>
       <th class='table-header scope='col'>Show Link</th>
@@ -17,6 +19,8 @@
     <% @runs.each do |run| %>
       <tr>
         <td><%= run.distance %></td>
+        <td><%= run.distance/1609 %></td>
+        <td><%= run.distance/1000 %></td>
         <td><%= run.date %></td>
         <td><%= run.user_id %></td>
         <td><%= link_to 'Show', run %></td>
