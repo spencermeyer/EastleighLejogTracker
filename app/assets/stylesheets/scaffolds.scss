@@ -20,7 +20,7 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #0645AD !important;
 
   &:visited {
     color: #666;
@@ -81,4 +81,12 @@ div {
 
 label {
   display: block;
+  margin-bottom: 0.2rem;
+  font-weight: 600;
 }
+
+#user_screen_name, #user_password, #user_current_password {
+  display: block;
+}
+
+

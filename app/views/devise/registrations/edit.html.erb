@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -13,22 +13,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label 'First Name' %> <br />
+    <%= f.label 'First Name' %>
     <%= f.text_field :first_name, autocomplete: "off", value: current_user.first_name %>
   </div>
 
   <div class="field">
-    <%= f.label 'Last Name' %><br />
+    <%= f.label 'Last Name' %>
     <%= f.text_field :last_name, autocomplete: "off", value: current_user.last_name %>
   </div>
 
   <div class="field">
-    <%= f.label 'Screen Name' %> <i>(this is what others will see on the leaderboard etc)</i><br />
+    <%= f.label 'Screen Name' %> 
+    <i>(this is what others will see on the leaderboard etc)</i>
     <%= f.text_field :screen_name, autocomplete: "off", value: current_user.screen_name %>
   </div>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> 
+    <i>(leave blank if you don't want to change it)</i>
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
@@ -37,17 +39,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label 'Stava ID' %> <i>(should be a number  blah blah blah)</i><br />
+    <%= f.label 'Stava ID' %> <i>(should be a number, probably around 8 digits long) We use this to tie Strava data to your account.  See the about/faq/instructions page for where to find this.</i>
     <%= f.text_field :current_password, autocomplete: "off", value: current_user.strava_id %>
   </div>
 

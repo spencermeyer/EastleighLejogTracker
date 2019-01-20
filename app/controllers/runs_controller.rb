@@ -42,7 +42,6 @@ class RunsController < ApplicationController
   # PATCH/PUT /runs/1
   # PATCH/PUT /runs/1.json
   def update
-    # TODO UNITS ********************
     respond_to do |format|
       if @run.update(run_params)
         format.html { redirect_to @run, notice: 'Run was successfully updated.' }

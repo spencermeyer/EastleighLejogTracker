@@ -47,12 +47,11 @@ do teams.
 MUST DO BEFORE PUT INTO WILD
 ............................
 
-Get the runs/show to be selective units.
-Have a preferred units for a user.
+-date sort the runs in my runs.
+-Menu to work for small screen
+-Get the runs/show to be selective units.
+-Have a preferred units for a user.
 
-
-
-Admin access only to resque (routes).
 
 NICE TO HAVE
 ............
