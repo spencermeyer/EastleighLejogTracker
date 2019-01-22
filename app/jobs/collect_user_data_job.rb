@@ -10,7 +10,7 @@ class CollectUserDataJob
     before = Time.now.to_i
     after  = (DateTime.new(2019, 1, 1)).to_i
 
-    uri = URI.parse("https://www.strava.com/api/v3/athlete/activities?after=#{after}&before=#{before}&page=1&perPage=100")
+    uri = URI.parse("https://www.strava.com/api/v3/athlete/activities?after=#{after}&before=#{before}&page=1&perPage=400")
     http = Net::HTTP.new(uri.host, 443)
     http.use_ssl = true
     headers = {"Authorization"=>"Bearer #{user.strava_access_token}"}
