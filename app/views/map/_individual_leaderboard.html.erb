@@ -8,7 +8,7 @@
     </tr>
     <% @leader_data.each do |user| %>
       <tr>
-        <td class='leaderboard-column'><%= user[:screen_name] %></td><td class='leaderboard-column'><%= user[:total_miles]%></td>
+        <td class='leaderboard-column'><%= user[:screen_name] %></td><td class='leaderboard-column'><%= user[:total_miles]/1609%></td>
       </tr>
     <% end %>
     </table>
