@@ -18,7 +18,6 @@ Build Log
 First shot at the jsx map, and there was a performance issue with the map.
 Reduced the size of the gpx file at https://labs.easyblog.it/maps/gpx-simplify-optimizer/
 
-
 How to start a resque worker:
 QUEUE='*' bundle exec rake environment resque:work
 rake resque:scheduler
@@ -47,10 +46,9 @@ do teams.
 MUST DO BEFORE PUT INTO WILD
 ............................
 
--date sort the runs in my runs.
--Menu to work for small screen
 -Get the runs/show to be selective units.
 -Have a preferred units for a user.
+-can't seem to update anything under edit user
 
 
 NICE TO HAVE
@@ -66,7 +64,6 @@ Make a job to refresh access tokens daily...and then refresh data.
 
 before deploy:
 --------------
-admin in routes
 
 
 'bugs' to fix

@@ -2,7 +2,7 @@ class TestJob
   @queue = :collect
     
   def self.perform(user_hash)
-    binding.pry
+    # binding.pry
     Rails.logger.debug "AWOOGA #{Rails.env}"
     user = User.find(3)
 
