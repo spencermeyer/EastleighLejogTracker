@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   root to: 'map#index'
   get 'about/about',  to: 'about#about'
+  post 'about/send_message', to: 'about#send_message'
   get 'strava_auth',  to: 'strava_auth#strava_auth'
   get 'leader_data', to: 'leaderboard#data'
 end

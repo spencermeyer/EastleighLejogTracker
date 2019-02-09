@@ -29,26 +29,21 @@ General Setup
 SLACK_WEBHOOK_URL environmental variable.
 STRAVA_CLIENT_ID  environental variable.
 STRAVA_CLIENT_SECRET environmental variable.
+LEJOGMAILTARGET environmental variable.
+MAILGUNAPIKEY
 
 TODO
 ----
 
-
 MUST DO BEFORE TESTING
 ......................
-
-remove strava run id from views after testing
-
-sort map helper with the callback url config
 
 do teams.
 
 MUST DO BEFORE PUT INTO WILD
 ............................
 
--Get the runs/show to be selective units.
 -Have a preferred units for a user.
--can't seem to update anything under edit user
 
 
 NICE TO HAVE

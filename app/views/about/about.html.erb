@@ -10,5 +10,10 @@
 <h5>What does this app get from Strava?</h4><p>It imports your distance and date for each run in the time interval the competition runs for, and stores them to a database.  It does not request permission to write anything to Strava.  You can revoke permission to read data from Strava at any time from your Strava control panel, or just remove your strava id under 'edit user'.</p>
 <h5>Where do I find my Strava id?</h5>
 <p>Log in to Strava and go to 'My Profile' then note the trailing numbder in the url.  There are further instructions here:<a href='https://support.strava.com/hc/en-us/articles/216928797-Where-do-I-find-my-Strava-ID-' target='blank'>Find Your Strava ID</a></p>
-
-<h5>My data is not there :(</h4><p>It takes a minute to import from Strava, if you refresh your browser after a couple of minutes and it is still not there, send me a message in the link below.  Data should also update once per day.  If your new data does not appear, please let me know.</p>
+<h5>My data is not there :(</h4><p>It takes a minute to import from Strava, if you refresh your browser after a couple of minutes and it is still not there, send me a message in the link below.  Data should also update once per day.  If your new data does not appear, please let me know. It would be great if you could leave your email address in the message text :)</p>
+<div class=''>
+  <%=form_for :message, url: {action: 'send_message'} do |f| %>
+    Message: <%= f.text_area :message_text, class: 'align-middle'%>
+    <%= f.submit 'Send Message' %>
+  <% end %>
+</div>
