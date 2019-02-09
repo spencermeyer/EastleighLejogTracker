@@ -50,7 +50,7 @@
 
   <div class="field">
     <%= f.label 'Stava ID' %> <i>(should be a number, probably around 8 digits long) We use this to tie Strava data to your account.  See the about/faq/instructions page for where to find this.</i>
-    <%= f.text_field :current_password, autocomplete: "off", value: current_user.strava_id %>
+    <%= f.text_field :strava_id, autocomplete: "off", value: current_user.strava_id %>
   </div>
 
   <br/>

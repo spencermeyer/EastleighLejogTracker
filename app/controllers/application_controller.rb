@@ -10,5 +10,6 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :strava_id, :first_name, :last_name, :screen_name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :strava_id, :first_name, :last_name, :screen_name])
   end
 end
