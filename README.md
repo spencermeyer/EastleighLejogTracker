@@ -61,6 +61,14 @@ before deploy:
 --------------
 
 
+Deploy notes
+------------
+Heroku always fails to start a worker, so go to the web-console and run:
+`      `
+
+
+
+
 'bugs' to fix
 -------------
 why when I pass a user into the resque job, does it end up as a hash and I have to look up the user again?
@@ -69,6 +77,22 @@ Notes for if I move away from Heroku
 ------------------------------------
 redis prod config
 callback url
+
+Now trying to build this on digital ocean
+-----------------------------------------
+
+Failures:
+
+sudo -u postgres createuser -s pguser
+
+come back to certbot when the domain is alive. :)
+
+
+
+
+
+
+
 
 
 
