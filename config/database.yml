@@ -16,7 +16,7 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
   username: pguser
   password:
   socket: /tmp/mysql.sock
