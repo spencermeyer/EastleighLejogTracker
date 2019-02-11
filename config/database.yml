@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: eastleigh_lejog_tracker_production
-  # username: eastleigh_lejog_tracker
+  username: deploy
   password: <%= ENV['EASTLEIGH_LEJOG_TRACKER_DATABASE_PASSWORD'] %>
