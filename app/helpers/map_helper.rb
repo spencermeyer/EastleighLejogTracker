@@ -9,7 +9,7 @@ module MapHelper
 
   def strava_callback_url
     if Rails.env.production?
-      'https://eastleigh-lejog-tracker.herokuapp.com'
+      'https://eastleighlejogtracker.co.uk'
     else
       'https://901f0cd2.ngrok.io'
     end

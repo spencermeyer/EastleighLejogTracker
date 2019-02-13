@@ -35,6 +35,8 @@ MAILGUNAPIKEY
 TODO
 ----
 
+Put a link to how to find the strava id in the sign up page.
+
 MUST DO BEFORE TESTING
 ......................
 
@@ -89,9 +91,13 @@ come back to certbot when the domain is alive. :)
 
 
 
-
-
-
+Having trouble with peer authentication
+---------------------------------------
+sudo -u postgres psql
+SHOW hba_file;
+/etc/postgresql/9.5/main/pg_hba.conf
+changed local authentication to trust from peer.
+pg_ctl reload
 
 
 
