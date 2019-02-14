@@ -41,6 +41,7 @@ namespace :config do
   task :symlink do
     on roles(:app) do
       execute "ln -sf {#{shared_path},#{release_path}}/config/secrets.yml"
+      execute "ln -sf {#{shared_path},#{release_path}}/config/local_env.yml"
     end
   end
 end
