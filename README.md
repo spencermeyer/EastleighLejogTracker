@@ -52,12 +52,9 @@ NICE TO HAVE
 ............
 Alter the map helper url from force to auto for deploy.
 
-add a message button to the FAQs.
-
 admin panel for start and finish dates.
 
 Make a job to refresh access tokens daily...and then refresh data.
-
 
 before deploy:
 --------------
