@@ -1,13 +1,11 @@
-AssembleUserImporters:
-  cron: '30 6 * * 7'
-  class: AssembleUserImporters
-  queue: assembly
-  args: 
-    'lejog testing'
-  description: 'Assembles individual jobs'
+RefreshTokens:
+  cron: '0 */4 * * *'
+  class: RefreshTokens
+  queue: collect
+  description: 'Refreshes Access Tokens'
   
 TestJob:
-  cron: '30 6 * * 7'
+  cron: '0 0 5 31 2'
   class: TestJob
   queue: collect
   args: 

@@ -39,8 +39,7 @@ class CollectUserDataJob
   end
 end
 
-# my response:
-# a bit big, BUT it is an array of activities.
+# example response:
 # here is ONE:
 
 # => [{"resource_state"=>2,
