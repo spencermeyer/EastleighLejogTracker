@@ -2,8 +2,6 @@
 # lock "3.7.2"
 lock "3.11.0"
 
-ssh_options[:compression] = "none"  # trial
-
 server '209.97.129.237', roles: [:web, :app, :db], primary: true
 
 set :repo_url, "git@github.com:spencermeyer/EastleighLejogTracker.git"
