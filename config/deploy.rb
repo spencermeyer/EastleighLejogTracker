@@ -34,8 +34,8 @@ set :bundle_without, %w{development test}.join(' ')  # trial but shoudl be defau
 ## Defaults:
 # set :scm,           :git
 # set :branch,        :master
-# set :format,        :pretty
-# set :log_level,     :debug
+set :format,        :pretty
+set :log_level,     :debug
 set :keep_releases, 2
 
 namespace :config do
@@ -109,7 +109,7 @@ namespace :deploy do
   end
 
   before :starting,     :check_revision
-  #after  :finishing,    :compile_assets
+  after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
   after  :finishing,    :start_a_resque_worker
