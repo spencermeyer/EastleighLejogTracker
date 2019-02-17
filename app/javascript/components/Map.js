@@ -63,7 +63,7 @@ class Map extends React.Component {
     if(this.state.positions.length > 1) {
       return this.state.positions.map((pos, i) => {
         if(pos['coords']) {
-          return <ProgressMarker lat = {pos['coords'][0]} lng = {pos['coords'][1] } text = {pos['name']} />
+          return <ProgressMarker lat = {pos['coords'][0]} lng = {pos['coords'][1] } text = {pos['name']} key = {i}/>
         }
       })
     }
