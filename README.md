@@ -23,7 +23,6 @@ QUEUE='*' bundle exec rake environment resque:work
 rake resque:scheduler
 bundle exec rake environment resque_delayed:work QUEUE='*'
 
-
 General Setup
 -------------
 SLACK_WEBHOOK_URL environmental variable.
@@ -35,16 +34,6 @@ MAILGUNAPIKEY
 TODO
 ----
 
-Put a link to how to find the strava id in the sign up page.
-
-MUST DO BEFORE TESTING
-......................
-
-do teams.
-
-MUST DO BEFORE PUT INTO WILD
-............................
-
 -Have a preferred units for a user.
 
 
@@ -54,39 +43,17 @@ Alter the map helper url from force to auto for deploy.
 
 admin panel for start and finish dates.
 
-Make a job to refresh access tokens daily...and then refresh data.
 
 before deploy:
 --------------
 
-
 Deploy notes
 ------------
-Heroku always fails to start a worker, so go to the web-console and run:
-`      `
+Restart resque stuff.
 
 
-
-
-'bugs' to fix
--------------
-why when I pass a user into the resque job, does it end up as a hash and I have to look up the user again?
-
-Notes for if I move away from Heroku
-------------------------------------
-redis prod config
-callback url
-
-Now trying to build this on digital ocean
------------------------------------------
-
-Failures:
-
-sudo -u postgres createuser -s pguser
-
-come back to certbot when the domain is alive. :)
-
-
+Build this on digital ocean
+----------------------------
 
 Having trouble with peer authentication
 ---------------------------------------
@@ -95,7 +62,4 @@ SHOW hba_file;
 /etc/postgresql/9.5/main/pg_hba.conf
 changed local authentication to trust from peer.
 pg_ctl reload
-
-
-
 
