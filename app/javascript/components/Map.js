@@ -24,7 +24,6 @@ class Map extends React.Component {
       url: '/end_to_end_example_main_route_965nodes.gpx',
       dataType: 'xml',
       success: function(data){
-        //console.log('we got' + data.getElementsByTagName('trkpt').length + 'points');
         var dataSet = data.getElementsByTagName('trkpt');
         var result = Object.keys(dataSet).map(function(key){ return [ dataSet[key].getAttribute('lat'), dataSet[key].getAttribute('lon') ]  });
         that.setState({
@@ -37,8 +36,6 @@ class Map extends React.Component {
       url: '/leader_data',
       dataType: 'json',
       success: function(data){
-        console.log('leader data', data);
-        console.log('is state markers available?', that.state.markers[0])
         var dataWithCoordinates = data.map(function(point){
           return {'name' : point.screen_name, 'coords' : that.state.markers[point.total_miles] }
            });
@@ -72,7 +69,6 @@ class Map extends React.Component {
   render () {
     return (
       <div style={{ height: '100vh', width: '100%' }}>
-        { console.log('from within return') }
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyD3nqUGFkDrCCDA8os-XGLGCMRxRCYW0tU' }}
           defaultCenter={this.props.center}
