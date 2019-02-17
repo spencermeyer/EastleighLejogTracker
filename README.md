@@ -33,9 +33,9 @@ MAILGUNAPIKEY
 
 TODO
 ----
+Write bash scripts to start up and shut down resque processes.
 
 -Have a preferred units for a user.
-
 
 NICE TO HAVE
 ............
@@ -49,8 +49,7 @@ before deploy:
 
 Deploy notes
 ------------
-Restart resque stuff.
-
+Restart resque stuff  (if there were any code changes, the deploy doesn't stop the processes).
 
 Build this on digital ocean
 ----------------------------
@@ -62,4 +61,15 @@ SHOW hba_file;
 /etc/postgresql/9.5/main/pg_hba.conf
 changed local authentication to trust from peer.
 pg_ctl reload
+
+Useful debug lines
+------------------
+User.all.each { |user| puts user.id.to_s + '  ' + user.strava_refresh_token.to_s + '  ' + user.first_name.to_s + ' ' + user.strava_access_token.to_s};0
+
+How to restart resque processes
+-------------------------------
+RAILS_ENV=production BACKGROUND=yes bundle exec rake resque:scheduler &
+RAILS_ENV=production BACKGROUND=yes bundle exec rake resque_delayed:work &
+RAILS_ENV=production BACKGROUND=yes QUEUE=* bundle exec rake environment resque:work &
+
 

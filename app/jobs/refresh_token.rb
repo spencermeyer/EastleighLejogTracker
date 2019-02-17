@@ -4,8 +4,6 @@ class RefreshToken
   def self.perform(hash)
     user = User.find(hash['args_hash']['user'])
    
-    Rails.logger.warn "AWOOGA #{user.first_name}"
-
     uri = URI.parse("https://www.strava.com/oauth/token?client_id=#{ENV['STRAVA_CLIENT_ID']}&client_secret=#{ENV['STRAVA_CLIENT_SECRET']}&grant_type=refresh_token&refresh_token=#{user.strava_refresh_token}")
     http = Net::HTTP.new(uri.host, 443)
     http.use_ssl = true
