@@ -7,7 +7,7 @@ class Team < ApplicationRecord
   end
 
   def total_team_miles
-    users.all.each.inject(0) { |memo, user| memo + user.total_miles }
+    users.all.each.inject(0) { |memo, user| memo + user.total_miles }.round
   end
 
   private

@@ -41,7 +41,7 @@ class User < ApplicationRecord
   belongs_to :team
 
   def total_miles
-    runs.all.sum(:distance)
+    runs.all.sum(:distance).round
   end
 
   def strava_access_token_expiry_at_human
