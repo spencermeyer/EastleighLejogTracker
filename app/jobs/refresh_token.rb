@@ -3,6 +3,8 @@ class RefreshToken
 
   def self.perform(hash)
     user = User.find(hash['args_hash']['user'])
+   
+    Rails.logger.warn "AWOOGA #{user.first_name}"
 
     uri = URI.parse("https://www.strava.com/oauth/token?client_id=#{ENV['STRAVA_CLIENT_ID']}&client_secret=#{ENV['STRAVA_CLIENT_SECRET']}&grant_type=refresh_token&refresh_token=#{user.strava_refresh_token}")
     http = Net::HTTP.new(uri.host, 443)
@@ -22,7 +24,7 @@ class RefreshToken
       Resque.enqueue(CollectUserDataJob, user)
     else
       notifier = Slack::Notifier.new(ENV['SLACK_WEBHOOK_URL'], channel: "#general")
-      notifier.ping text: "Fail Refresh Token for #{user['first_name']}"      
+      notifier.ping text: "Fail Response Refresh Token for #{user['first_name']}"      
     end
   end
 end
