@@ -29,7 +29,7 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
-set :bundle_without, %w{development test}.join(' ')
+set :bundle_without, %w{development test}.join(' ')  # trial but shoudl be default.
 
 ## Defaults:
 # set :scm,           :git
@@ -65,7 +65,7 @@ namespace :deploy do
   desc "Make sure local git is in sync with remote."
   task :check_revision do
     on roles(:app) do
-      unless `git rev-parse HEAD` == `git rev-parse origin/master`
+      unless `git rev-parse HEAD` == `git rev-parse github/master`
       # unless `git rev-parse HEAD` == `git rev-parse bitbucket/master`
         puts "WARNING: HEAD is not the same as origin/master"
         # puts "WARNING: HEAD is not the same as bitbucket/master"
