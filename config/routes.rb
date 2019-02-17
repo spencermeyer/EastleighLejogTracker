@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :runs
   require 'resque_web'
+
+  resources :teams do
+    get :join
+  end
+  resources :runs
 
   resque_web_constraint = lambda do |request|
     current_user = request.env['warden'].user

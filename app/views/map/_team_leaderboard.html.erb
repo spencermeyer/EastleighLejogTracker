@@ -1,0 +1,15 @@
+<div class='bg-warning'>
+  <h3>Team Leaderboard</h3>
+
+  <table class='leaderboard-table'>
+    <tr>
+      <th class='leaderboard-column'>Name</th>
+      <th class='leaderboard-column'>Miles</th>
+    </tr>
+    <% @team_leader_data.each do |team| %>
+      <tr>
+        <td class='leaderboard-column'><%= team[:name] %></td><td class='leaderboard-column'><%= team[:total_miles]/1609%></td>
+      </tr>
+    <% end %>
+    </table>
+</div>

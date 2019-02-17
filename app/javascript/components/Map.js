@@ -19,7 +19,6 @@ class Map extends React.Component {
   };
 
   componentDidMount() {
-    console.log('hello from CDM');
     var that = this;
     $.ajax({
       url: '/end_to_end_example_main_route_965nodes.gpx',

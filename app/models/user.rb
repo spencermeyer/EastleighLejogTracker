@@ -38,6 +38,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :runs
+  belongs_to :team
 
   def total_miles
     runs.all.sum(:distance)
