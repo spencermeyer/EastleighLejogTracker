@@ -2,7 +2,7 @@ class RefreshToken
   @queue = :collect
 
   def self.perform(hash)
-    @user = User.find(hash['args_hash']['user'])
+    user = User.find(hash['args_hash']['user'])
 
     uri = URI.parse("https://www.strava.com/oauth/token?client_id=#{ENV['STRAVA_CLIENT_ID']}&client_secret=#{ENV['STRAVA_CLIENT_SECRET']}&grant_type=refresh_token&refresh_token=#{@user.strava_refresh_token}")
     http = Net::HTTP.new(uri.host, 443)
