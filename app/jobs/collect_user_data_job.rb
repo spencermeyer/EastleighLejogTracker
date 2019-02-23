@@ -35,6 +35,8 @@ class CollectUserDataJob
       notifier.ping text: "Sucess Collect Data Job for #{user.first_name}"
     else
       notifier.ping text: "Failed Collect Data Job for #{user.first_name}"
+      notifier.ping text: "Error code: #{response.code}"
+      notifier.ping text: "#{response.body}"
     end
   end
 end

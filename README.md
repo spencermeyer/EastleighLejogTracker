@@ -33,6 +33,16 @@ MAILGUNAPIKEY
 
 TODO
 ----
+
+This all works for me, but for a test user it did not.
+
+put this in the collect job as debug information ?
+
+https://developers.strava.com/docs/reference/#api-Athletes-getLoggedInAthlete
+
+
+
+
 Write bash scripts to start up and shut down resque processes.
 
 -Have a preferred units for a user.
