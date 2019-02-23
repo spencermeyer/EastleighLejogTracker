@@ -7,6 +7,17 @@ class CollectUserDataJob
     notifier = Slack::Notifier.new(ENV['SLACK_WEBHOOK_URL'], channel: "#general")
     notifier.ping text: "Starting Collect Data Job for #{user['first_name']}"
 
+    ##### debugging  ####
+    uri2 = URI.parse("https://www.strava.com/api/v3/athlete")
+    http = Net::HTTP.new(uri2.host, 443)
+    http.use_ssl = true
+    headers = {"Authorization"=>"Bearer #{user.strava_access_token}"}
+    request = Net::HTTP::Get.new(uri2, headers)
+    response = http.request(request)
+
+    notifier.ping text: "Debugging #{user['first_name']} #{response.code}   response.body "
+    ####################
+
     before = Time.now.to_i
     after  = (DateTime.new(2019, 1, 1)).to_i
 
