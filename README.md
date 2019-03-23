@@ -8,9 +8,13 @@ I'm using Ruby on rails for the app, and the front end employs some React jsx fo
 Ruby 2.4.0
 Rails 5.1.6
 Postgresql.
+Resque (for background jobs).
 
 Services running are:
 Resque, resque worker, resque scheduler.
+
+The strava auth controller stores athlete authorisation tokens and athlete refresh tokens in the users table.  
+There is a refresh tokens job that queues a refresh token jon for each user at 10 second intervals.  When the refresh token job is complete, it enqueues a collect data job for thet user.
 
 Build Log
 ---------
@@ -81,5 +85,41 @@ How to restart resque processes
 RAILS_ENV=production BACKGROUND=yes bundle exec rake resque:scheduler &
 RAILS_ENV=production BACKGROUND=yes bundle exec rake resque_delayed:work &
 RAILS_ENV=production BACKGROUND=yes QUEUE=* bundle exec rake environment resque:work &
+
+and this is what it should look like when started up:
+deploy    1786  0.0  8.4 334684 86112 ?        Sl   09:49   0:00 resque-1.27.4: Waiting for collect
+deploy    1799  0.0  7.0 247444 72088 ?        Sl   09:49   0:00 resque-scheduler-4.3.1[production]: Schedules Loaded
+deploy    1803 68.3  7.0 242620 72060 pts/0    Sl   09:49   0:02 resque-delayed: harvesting
+
+
+Only works for one user
+-----------------------
+
+Failed Collect Data Job for Paul
+
+Error code: 401
+{"message":"Authorization Error","errors":[{"resource":"Athlete","field":"access_token","code":"invalid"}]}
+
+
+Here could be the thing:
+
+https://groups.google.com/forum/#!topic/strava-api/Ah_jbfZ_G-o
+
+So the GET Api does not allow pulling of other athletes data. BUT . . . 
+
+ACTUALLY, THE WEBHOOK MAY DO WHAT I WANT BETTER.
+................................................
+
+
+
+
+
+
+
+
+
+
+
+
 
 
