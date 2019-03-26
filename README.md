@@ -35,6 +35,8 @@ STRAVA_CLIENT_SECRET environmental variable.
 LEJOGMAILTARGET environmental variable.
 MAILGUNAPIKEY
 
+Need to add STRAVA_VERIFY_TOKEN for the webhook.
+
 TODO
 ----
 
@@ -99,6 +101,14 @@ Failed Collect Data Job for Paul
 
 Error code: 401
 {"message":"Authorization Error","errors":[{"resource":"Athlete","field":"access_token","code":"invalid"}]}
+
+Documentation Sources
+.....................
+There were a lot of http requests (at least initially).  This is good reference:
+https://www.rubyguides.com/2018/08/ruby-http-request/
+
+Here is the documentation on strava's webhooks:
+http://developers.strava.com/docs/webhooks/
 
 
 Here could be the thing:
