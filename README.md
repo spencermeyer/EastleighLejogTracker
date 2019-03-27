@@ -34,8 +34,7 @@ STRAVA_CLIENT_ID  environental variable.
 STRAVA_CLIENT_SECRET environmental variable.
 LEJOGMAILTARGET environmental variable.
 MAILGUNAPIKEY
-
-Need to add STRAVA_VERIFY_TOKEN for the webhook.
+STRAVA_VERIFY_TOKEN for the webhook.
 
 TODO
 ----
