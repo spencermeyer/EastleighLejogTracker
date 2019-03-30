@@ -38,6 +38,8 @@ set :format,        :pretty
 set :log_level,     :debug
 set :keep_releases, 2
 
+set :default_environment, {NODE_ENV: production }
+
 namespace :config do
   desc "Symlink application config files."
   task :symlink do
