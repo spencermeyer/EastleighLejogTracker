@@ -77,17 +77,6 @@ namespace :deploy do
     end
   end
 
-  before "deploy:assets:precompile", "deploy:yarn_install"
-
-  desc 'Run rake yarn:install'
-  task :yarn_install do
-    on roles(:web) do
-      within release_path do
-        execute("cd #{release_path} && yarn install")
-      end
-    end
-  end
-
   desc 'Initial Deploy'
   task :initial do
     on roles(:app) do
@@ -122,7 +111,7 @@ namespace :deploy do
   end
 
   before :starting,     :check_revision
-  after  :finishing,    :compile_assets
+  # after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
   after  :finishing,    :start_a_resque_worker
