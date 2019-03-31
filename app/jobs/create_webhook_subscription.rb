@@ -1,6 +1,6 @@
 class CreateWebhookSubscription
   def self.perform
-    uri = URI.parse("https://api.strava.com/api/v3/push_subscriptions?client_id=#{ENV['STRAVA_CLIENT_ID']}&client_secret=#{ENV['STRAVA_CLIENT_SECRET']}&callback_url=eastleighlejogtracker.co.uk/strava-webhook&verify_token=#{ENV['STRAVA_VERIFY_TOKEN']}")
+    uri = URI.parse("https://api.strava.com/api/v3/push_subscriptions?client_id=#{ENV['STRAVA_CLIENT_ID']}&client_secret=#{ENV['STRAVA_CLIENT_SECRET']}&callback_url=http://eastleighlejogtracker.co.uk/strava-webhook&verify_token=#{ENV['STRAVA_VERIFY_TOKEN']}")
     http = Net::HTTP.new(uri.host, 443)
     http.use_ssl = true
     request = Net::HTTP::Post.new(uri)

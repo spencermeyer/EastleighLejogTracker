@@ -36,6 +36,8 @@ LEJOGMAILTARGET environmental variable.
 MAILGUNAPIKEY
 STRAVA_VERIFY_TOKEN for the webhook.
 
+I had a silent failure of webpacker for a long time, and found that adding 1G of swap memory fixed this.
+
 TODO
 ----
 
