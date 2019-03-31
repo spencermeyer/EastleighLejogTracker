@@ -9,6 +9,7 @@ class StravaWebhookController < ApplicationController
       Rails.logger.info "Awooga Responded"
     end
 
+    Rails.logger.info "AwoogaX #{request.body.inspect}"
   end
 
   def respond_to_strava_validation_request
