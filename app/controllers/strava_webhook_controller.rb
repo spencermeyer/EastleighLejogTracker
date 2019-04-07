@@ -6,7 +6,7 @@ class StravaWebhookController < ApplicationController
     # first respond to challenge because it is time limited.
     if params['hub.challenge']
       respond_to_strava_validation_request
-      Rails.logger.info "Awooga Responded"
+      Rails.logger.info "Awooga Responded and request was #{request.body.inspect}"
     end
 
     Rails.logger.info "AwoogaX #{request.body.inspect}"

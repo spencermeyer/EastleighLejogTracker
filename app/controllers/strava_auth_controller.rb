@@ -33,7 +33,7 @@ class StravaAuthController < ApplicationController
       current_user.strava_athlete_auth_email = data['athlete']['email']
       current_user.save
 
-      Resque.enqueue(CollectUserDataJob, current_user)
+      # Resque.enqueue(CollectUserDataJob, current_user)
     end
     redirect_to root_path
   end

@@ -26,4 +26,5 @@ Rails.application.routes.draw do
   get 'strava_auth',  to: 'strava_auth#strava_auth'
   get 'leader_data', to: 'leaderboard#data'
   get 'strava-webhook', to: 'strava_webhook#webhook'
+  post 'strava-webhook', to: 'strava_webhook#webhook'
 end

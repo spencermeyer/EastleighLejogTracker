@@ -13,7 +13,7 @@ class CreateWebhookSubscription
     })
 
     response = http.request(request)
-    Rails.logger.debug response
+    Rails.logger.info "Webhook Request Response = #{response}"
 
     # here listen for response which will only come after the 
     # strava_webhook_controller responded in 2 seconds to 

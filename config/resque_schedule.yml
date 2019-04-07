@@ -1,9 +1,9 @@
-RefreshTokens:
-  cron: '0 */4 * * *'
-  class: RefreshTokens
-  queue: collect
-  description: 'Refreshes Access Tokens'
-  
+# RefreshTokens:
+#   cron: '0 */4 * * *'
+#   class: RefreshTokens
+#   queue: collect
+#   description: 'Refreshes Access Tokens'
+
 TestJob:
   cron: '0 0 5 31 2'
   class: TestJob
@@ -19,3 +19,7 @@ TestJob:
 #   args:
 #     'testing rescue schedule alerter logger once per day'
 #   description: 'Runs the perform method in Alerter::Loggeronly'
+
+
+
+
