@@ -14,7 +14,9 @@ Services running are:
 Resque, resque worker, resque scheduler.
 
 The strava auth controller stores athlete authorisation tokens and athlete refresh tokens in the users table.  
-There is a refresh tokens job that queues a refresh token jon for each user at 10 second intervals.  When the refresh token job is complete, it enqueues a collect data job for thet user.
+There is a refresh tokens job that queues a refresh token jon for each user at 10 second intervals.
+
+I use the strava webhook.  This posts data to this application when a signed up user creates a run.  It then uses the strava data API to populate the data for that run.
 
 Build Log
 ---------

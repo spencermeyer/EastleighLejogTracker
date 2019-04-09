@@ -19,7 +19,10 @@ class RefreshToken
 
       user.save
 
-      Resque.enqueue(CollectUserDataJob, user)
+      # Resque.enqueue(CollectUserDataJob, user)
+
+      notifier = Slack::Notifier.new(ENV['SLACK_WEBHOOK_URL'], channel: "#general")
+      notifier.ping text: "Success Refresh Token for #{user['first_name']}" 
     else
       notifier = Slack::Notifier.new(ENV['SLACK_WEBHOOK_URL'], channel: "#general")
       notifier.ping text: "Fail Response Refresh Token for #{user['first_name']}"      

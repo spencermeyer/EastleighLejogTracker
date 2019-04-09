@@ -7,7 +7,7 @@ class TestJob
     user = User.find(3)
 
     notifier = Slack::Notifier.new(ENV['SLACK_WEBHOOK_URL'], channel: "#general")
-    notifier.ping text: "testing"
+    notifier.ping text: "testing the test job"
     Rails.logger.debug "Testing Awooga"
   end
 end
