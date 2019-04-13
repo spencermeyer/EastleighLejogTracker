@@ -13,6 +13,7 @@ class CollectRunDataJob
     http = Net::HTTP.new(uri.host, 443)
     http.use_ssl = true
     headers = {"Authorization"=>"Bearer #{user.strava_access_token}"}
+
     request = Net::HTTP::Get.new(uri, headers)
     response = http.request(request)
 
@@ -28,3 +29,7 @@ class CollectRunDataJob
     end
   end
 end
+
+
+# this works collecting my own runs, but not other users.
+#   :(
