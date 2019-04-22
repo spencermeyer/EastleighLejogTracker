@@ -48,12 +48,14 @@ gem 'jbuilder', '~> 2.5'
 gem 'mailgun-ruby'   #for alerting !
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rspec-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'annotate'
   gem 'pry-rails'
   gem 'pry-byebug'  # changed from pry.
   gem 'awesome_print'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
 end
 
 group :development do
