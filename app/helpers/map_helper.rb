@@ -4,7 +4,7 @@ module MapHelper
       '?client_id=' + 
       ENV['STRAVA_CLIENT_ID'] + 
       '&response_type=code' +
-      "&redirect_uri=#{strava_callback_url}/strava_auth&scope=activity:read_all&approval_prompt=force"
+      "&redirect_uri=#{strava_callback_url}/strava_auth&scope=activity:read_all&approval_prompt=auto"
   end
 
   def strava_callback_url

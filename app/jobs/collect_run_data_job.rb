@@ -32,4 +32,5 @@ end
 
 
 # this works collecting my own runs, but not other users.
+# actually it worked for my test user.  Just not Paul.
 #   :(
