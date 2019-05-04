@@ -19,8 +19,8 @@
     <% @runs.each do |run| %>
       <tr>
         <td><%= run.distance %></td>
-        <td><%= run.distance/1609 %></td>
-        <td><%= run.distance/1000 %></td>
+        <td><%= run.distance/1609 unless !run.distance %></td>
+        <td><%= run.distance/1000 unless !run.distance %></td>
         <td><%= run.date %></td>
         <td><%= run.user_id %></td>
         <td><%= link_to 'Show', run %></td>

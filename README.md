@@ -49,8 +49,8 @@ put this in the collect job as debug information ?
 
 https://developers.strava.com/docs/reference/#api-Athletes-getLoggedInAthlete
 
-
-
+PUT THE GOOGLE MAP API KEY INTO AN ENV VARIABLE, SOMEHOW.  RESTRICT THE IP THAT CAN ACCESS IT.
+LOOKS LIKE GOOGLE ONLY ALLOWS ONE IP ADDRESS PER KEY ?  :(
 
 Write bash scripts to start up and shut down resque processes.
 
