@@ -9,9 +9,8 @@ class StravaWebhookController < ApplicationController
     if params['aspect_type'] == 'create' && params['object_type'] == 'activity'
       user = User.find_by_strava_id(params['owner_id'])
       run = Run.create(user_id: user.id, strava_run_id: params['object_id'])
-      # TODO put this in a resque block
-      CollectRunDataJob.perform(run.id)
-      # TODO enqueue this not straight perform.
+      # CollectRunDataJob.perform(run.strava_run_id)
+      Resque.enqueue(CollectRunDataJob, run.id)
     end
 
     Rails.logger.info "AwoogaX #{request.body.inspect}"

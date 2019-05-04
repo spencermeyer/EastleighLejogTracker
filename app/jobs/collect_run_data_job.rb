@@ -1,8 +1,8 @@
 class CollectRunDataJob
   @queue = :collect
     
-  def self.perform(run_id)
-    run = Run.find(run_id)
+  def self.perform(strava_run_id)
+    run = Run.find_by_strava_run_id(strava_run_id)
     user = User.find(run.user_id)
 
     notifier = Slack::Notifier.new(ENV['SLACK_WEBHOOK_URL'], channel: "#general")
@@ -19,7 +19,16 @@ class CollectRunDataJob
 
     if response.code.to_i == 200
       data = JSON.parse(response.body)
-      # here parse the data and populate the run.
+
+      run = Run.find_by_strava_run_id(data['id'])
+      run.distance = data['distance']
+      run.date = DateTime.parse(data['start_date'])
+
+      run.save!   # unless data['type'] != ????
+
+      # TO DO stop it if it is not a run. (e.g. ride, swim ,etc) need to collect some runs to see how they are marked. Need to log some data to find out how this is formatted.
+
+      Rails.logger.info "AWOOGA #{data} "
 
       notifier.ping text: "Sucess Collect RUN Job for #{user.first_name}"
     else

@@ -2,9 +2,6 @@ require 'rails_helper'
 
 RSpec.describe StravaWebhookController, type: :controller do
  describe '#webhook' do
-  before(:all) do
-  end 
-
   it 'collects user activities' do
     user = create(:user, strava_id: 21382538)
 
