@@ -25,18 +25,21 @@ First shot at the jsx map, and there was a performance issue with the map.
 Reduced the size of the gpx file at https://labs.easyblog.it/maps/gpx-simplify-optimizer/
 
 How to start a resque worker:
+```
 QUEUE='*' bundle exec rake environment resque:work
 rake resque:scheduler
 bundle exec rake environment resque_delayed:work QUEUE='*'
+```
 
 General Setup
 -------------
-SLACK_WEBHOOK_URL environmental variable.
-STRAVA_CLIENT_ID  environental variable.
-STRAVA_CLIENT_SECRET environmental variable.
-LEJOGMAILTARGET environmental variable.
-MAILGUNAPIKEY
-STRAVA_VERIFY_TOKEN for the webhook.
+Set these environmental variables:
+- SLACK_WEBHOOK_URL environmental variable.
+- STRAVA_CLIENT_ID  environental variable.
+- STRAVA_CLIENT_SECRET environmental variable.
+- LEJOGMAILTARGET environmental variable.
+- MAILGUNAPIKEY
+- STRAVA_VERIFY_TOKEN for the webhook.
 
 I had a silent failure of webpacker for a long time, and found that adding 1G of swap memory fixed this.
 
@@ -48,9 +51,6 @@ This all works for me, but for a test user it did not.
 put this in the collect job as debug information ?
 
 https://developers.strava.com/docs/reference/#api-Athletes-getLoggedInAthlete
-
-PUT THE GOOGLE MAP API KEY INTO AN ENV VARIABLE, SOMEHOW.  RESTRICT THE IP THAT CAN ACCESS IT.
-LOOKS LIKE GOOGLE ONLY ALLOWS ONE IP ADDRESS PER KEY ?  :(
 
 Write bash scripts to start up and shut down resque processes.
 
@@ -75,35 +75,43 @@ Build this on digital ocean
 
 Having trouble with peer authentication
 ---------------------------------------
+```
 sudo -u postgres psql
 SHOW hba_file;
 /etc/postgresql/9.5/main/pg_hba.conf
 changed local authentication to trust from peer.
 pg_ctl reload
+```
 
 Useful debug lines
 ------------------
+```
 User.all.each { |user| puts user.id.to_s + '  ' + user.strava_refresh_token.to_s + '  ' + user.first_name.to_s + ' ' + user.strava_access_token.to_s};0
+```
 
 How to restart resque processes
 -------------------------------
+```
 RAILS_ENV=production BACKGROUND=yes bundle exec rake resque:scheduler &
 RAILS_ENV=production BACKGROUND=yes bundle exec rake resque_delayed:work &
 RAILS_ENV=production BACKGROUND=yes QUEUE=* bundle exec rake environment resque:work &
+```
 
 and this is what it should look like when started up:
+```
 deploy    1786  0.0  8.4 334684 86112 ?        Sl   09:49   0:00 resque-1.27.4: Waiting for collect
 deploy    1799  0.0  7.0 247444 72088 ?        Sl   09:49   0:00 resque-scheduler-4.3.1[production]: Schedules Loaded
 deploy    1803 68.3  7.0 242620 72060 pts/0    Sl   09:49   0:02 resque-delayed: harvesting
-
+```
 
 Only works for one user
 -----------------------
 
 Failed Collect Data Job for Paul
-
+```
 Error code: 401
 {"message":"Authorization Error","errors":[{"resource":"Athlete","field":"access_token","code":"invalid"}]}
+```
 
 Documentation Sources
 .....................
