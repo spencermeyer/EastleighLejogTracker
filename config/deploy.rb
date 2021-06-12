@@ -1,6 +1,6 @@
 # config valid only for current version of Capistrano
 # lock "3.7.2"
-lock "3.11.0"
+lock "3.16.0"
 
 server '209.97.129.237', roles: [:web, :app, :db], primary: true
 
