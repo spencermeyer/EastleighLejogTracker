@@ -47,6 +47,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'mailgun-ruby'   #for alerting !
 
+gem 'mimemagic', '~> 0.3.9'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
