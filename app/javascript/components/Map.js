@@ -70,7 +70,7 @@ class Map extends React.Component {
     return (
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyDu44Jzey-TXBHJuczwOiGUZPlHjBpnCTA' }}
+          bootstrapURLKeys={{ key: 'AIzaSyCQhRgUp3DxbGV47K6g7UzWHFsfw2hFppc' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
           yesIWantToUseGoogleMapApiInternals>
